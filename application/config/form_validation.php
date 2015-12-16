@@ -8,6 +8,12 @@ $config = array(
 		array('field' => 'last_name', 'label' => 'last_name', 'rules' => 'trim|required|max_length[50]'),
 		array('field' => 'phone_number', 'label' => 'phone_number', 'rules' => 'trim|required|alpha_dash'),
 	),
+	'student_post' => array(
+		array('field' => 'email_address', 'label' => 'email_address', 'rules' => 'trim|required|valid_email'),
+		array('field' => 'first_name', 'label' => 'first_name', 'rules' => 'trim|max_length[50]'),
+		array('field' => 'last_name', 'label' => 'last_name', 'rules' => 'trim|max_length[50]'),
+		array('field' => 'phone_number', 'label' => 'phone_number', 'rules' => 'trim|alpha_dash'),
+	),
 );
 
 ?>

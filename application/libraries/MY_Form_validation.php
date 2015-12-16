@@ -15,7 +15,7 @@ class MY_Form_validation extends CI_Form_validation{
 		return $this->_config_rules;
 	}
 	
-	public function get_field_name($form) {
+	public function get_field_names($form) {
 		$field_names = array();
 		$rules = $this->get_config_rules();
 		$rules = $rules[$form];

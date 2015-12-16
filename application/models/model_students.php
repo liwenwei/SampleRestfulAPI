@@ -8,6 +8,7 @@ class Model_students extends MY_Model{
 	
 	protected $after_get = array('remove_sensitive_data');
 	protected $before_create = array('prep_data');
+	protected $before_update = array('update_timestamp');
 	
 	protected function remove_sensitive_data($student){
 		unset($student['password']);
@@ -19,6 +20,11 @@ class Model_students extends MY_Model{
 		$student['password'] = md5($student['password']);
 		$student['ip_address'] = $this->input->ip_address();
 		$student['created_timestamp'] = date('Y-m-d H:i:s');
+		return $student;
+	}
+	
+	protected function update_timestamp($student){
+		$student['updated_timestamp'] = date('Y-m-d H:i:s');
 		return $student;
 	}
 }
